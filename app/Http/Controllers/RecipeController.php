@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Recipe\StoreRequest;
-use Illuminate\Http\Request;
 use App\Http\Requests\Recipe\UpdateRequest;
 use App\Models\Recipe;
 use App\Models\Product;
@@ -33,7 +32,7 @@ class RecipeController extends Controller
         return view("recipe.create", compact("products"));
     }
 
-    public function store(StoreRequest $request, Recipe $recipe)
+    public function store(StoreRequest $request)
     {
         $data = $request->validated();
         $recipe = $this->recipeService->create($data);

@@ -24,8 +24,7 @@
                     </a>
                     <div class="navbar-nav">
                         <a class="nav-link" href="{{ route('recipe.index') }}">Recipes</a>
-                        <a class="nav-link" href="{{ route('recipe.index') }}">recipe.index</a>
-                        <a class="nav-link" href="{{ route('recipe.index') }}">recipe.index</a>
+                        <a class="nav-link" href="{{ route('product.index') }}">Products</a>
                     </div>
                 </div>
             </nav>
