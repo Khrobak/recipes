@@ -18,7 +18,7 @@ class Recipe extends Model
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class)->withPivot(columns: 'weight');
+        return $this->belongsToMany(Product::class)->withPivot('weight');
     }
 
     public function getProducthWeight($productId): ?int
