@@ -16,6 +16,6 @@ class Product extends Model
 
     public function recipes(): BelongsToMany
     {
-        return $this->belongsToMany(Recipe::class, 'product_recipe');
+        return $this->belongsToMany(Recipe::class)->withPivot(columns: 'weight');
     }
 }

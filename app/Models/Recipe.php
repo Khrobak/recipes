@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Recipe extends Model
 {
     use HasFactory;
+    const DEFAULT_WEIGHT = 100;
 
     protected $fillable = [
         'title',
@@ -17,6 +18,12 @@ class Recipe extends Model
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Recipe::class,'product_recipe');
+        return $this->belongsToMany(Product::class)->withPivot(columns: 'weight');
+    }
+
+    public function getProducthWeight($productId): ?int
+    {
+        $product = $this->products()->where('product_id', $productId)->first();
+        return $product ? $product->pivot->weight : self::DEFAULT_WEIGHT;
     }
 }
