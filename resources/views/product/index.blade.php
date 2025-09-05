@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'List - ' . config('app.name'))
+@section('title', 'List of products - ' . config('app.name'))
 
 @section('content')
 <div class="row">
